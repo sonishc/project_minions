@@ -1,24 +1,13 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# MINION
+Simple application, about what do the finite state machine.
 
 Things you may want to cover:
 
-* Ruby version
+* DB for production: pg
 
-* System dependencies
+* DB for development: mysql2
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Used
+  1. Finite state machine and background job
+  2. Action Mailer
+  3. Simple device authorization
