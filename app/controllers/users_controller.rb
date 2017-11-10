@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @toys = Toy.where(user_id: current_user.id)
-    @toy = Toy.find_by(user_id: current_user.id)
+    @users_toy = current_user.toys.find_by( user_id: current_user.id )
   end
 end

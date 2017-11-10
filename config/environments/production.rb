@@ -95,10 +95,10 @@ Rails.application.configure do
     port: 587,
     user_name: ENV['gmail_username'],
     password: ENV['gmail_password'],
-    authentication: 'plain',
+    authentication: 'heroku.com',
     enable_starttls_auto: true
   }
 
-  сonfig.action_mailer.default_url_options = { host: ENV.fetch('APPLICATION_HOST') }
+  config.action_mailer.default_url_options = { host: 'blooming-beach-64781.herokuapp.com' }
   config.active_job.queue_adapter = :delayed_job
 end

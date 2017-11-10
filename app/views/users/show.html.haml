@@ -5,8 +5,8 @@
   %div
     = render 'personal_info'
 %div
-- if @toy
-  = link_to 'Go to minione', user_toy_url(current_user, @toy), type: 'submit', class: 'cta-btn'
+- if @users_toy
+  = link_to 'Go to minions', user_toy_url(current_user, @users_toy), type: 'submit', class: 'cta-btn'
   %div
     = flash[:notice]
 %div

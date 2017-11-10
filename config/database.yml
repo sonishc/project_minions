@@ -14,3 +14,11 @@ test: &test
  host: localhost
  password:
 
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+production:
+  <<: *default
+  database: minion_development

@@ -1,7 +1,7 @@
 %div(class='app-frame')
   %h1 The minions 
   %h2 Simple application, about what do the finite state machine
-  %img(src='assets/minions.png' width='80%')
+  %img{ src: asset_path('minions.png'), alt: 'minion-img', width: '500'}
   %br
   - unless current_user
     = link_to "Login", 'users/sign_in', class: 'main-btn'

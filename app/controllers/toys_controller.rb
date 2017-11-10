@@ -1,10 +1,6 @@
 class ToysController < ApplicationController
-  def index
-    @toys = Toy.where(user_id: current_user.id)
-  end
-
   def show
-    index
+    @toys = current_user.toys.where( user_id: current_user.id )
     @toy = Toy.find_by(id: params[:id])
     return unless params[:state]
     return unless @toy.may_event?(params[:event])
