@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi, <%= @user.name %></h1>
+    <p>
+      Your's personal minion is <%= @toy.name %>
+    </p>
+    <p>
+      At this place present all events with your personal minion.
+      <%= @logs.map { |log| log.event } %>
+    </p>
+  </body>
+</html>

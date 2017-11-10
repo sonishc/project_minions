@@ -1,0 +1,10 @@
+%div(class='app-frame')
+  %h1 The minions 
+  %h2 Simple application, about what do the finite state machine
+  %img(src='assets/minions.png' width='80%')
+  %br
+  - unless current_user
+    = link_to "Login", 'users/sign_in', class: 'main-btn'
+    = link_to "Register", 'users/sign_up', class: 'main-btn'
+  - else
+    = link_to "Personal page", current_user, class: 'main-btn'

@@ -1,0 +1,13 @@
+%div{ class: 'container' }
+  %div
+    = render ('control_buttons')
+  %div
+    = render ('personal_minion')
+  %div
+    = render ('select_toy')
+- if @toy
+  %div{ class: 'container' }
+    %div
+      = render ('history')
+    %div
+      = render ('what_can_do')

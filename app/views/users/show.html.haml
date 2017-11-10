@@ -1,0 +1,12 @@
+%div{ class: 'sign-out' }
+  = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'main-btn'
+  = link_to 'Create minion', new_user_toy_url(current_user, @toy), action: 'create', class: 'cta-btn'
+%div{ class: 'container'}
+  %div
+    = render 'personal_info'
+%div
+- if @toy
+  = link_to 'Go to minione', user_toy_url(current_user, @toy), type: 'submit', class: 'cta-btn'
+  %div
+    = flash[:notice]
+%div

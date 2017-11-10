@@ -1,0 +1,9 @@
+%h1
+  Your's personal minion.
+  %h2
+    Name:
+    = @toy.name
+    |
+    State:
+    = @toy.aasm_state
+%img{ src: asset_path('1.png'), alt: 'Select state', id: 'minion-img', height: '250', width: '200'}
