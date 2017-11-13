@@ -10,6 +10,7 @@ class Toy < ApplicationRecord
     state :trained
     state :played
     state :sleeped
+    state :sent
 
     after_all_transitions :log_status_change, :add_log
 
@@ -25,9 +26,8 @@ class Toy < ApplicationRecord
     event :sleep do
       transitions from: %i[played trained], to: :sleeped
     end
-
     event :wake_up do
-      transitions from: [:sleeped], to: :wake_up, after: :send_mail
+      transitions from: [:sleeped], to: :wake_up
     end
   end
 

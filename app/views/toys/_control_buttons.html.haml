@@ -1,10 +1,9 @@
 %h1
   Control buttons
-= link_to 'Play', { controller: :toys, action: :show, event: 'play', state: 'played', toy_id: @toy}, class: 'info-btn'
-= link_to 'Sleep', { controller: :toys, action: :show, event: 'sleep', state: 'sleeped', toy_id: @toy}, class: 'info-btn'
-= link_to 'Eat', { controller: :toys, action: :show, event: 'eat', state: 'ate', toy_id: @toy}, class: 'info-btn'
-= link_to 'Training', { controller: :toys, action: :show, event: 'train', state: 'trained', toy_id: @toy}, class: 'info-btn'
-= link_to 'Wake up !!!', { controller: :toys, action: :show, event: 'wake_up', state: 'wake_up', toy_id: @toy}, class: 'info-btn'
-= link_to 'Go home', current_user, class: 'cta-btn'
+= link_to 'Sleep', { controller: :toys, action: :show, event: 'sleep', state: 'sleeped', toy_id: @toy}, class: "info-btn #{@toy.may_sleep?}"
+= link_to 'Play', { controller: :toys, action: :show, event: 'play', state: 'played', toy_id: @toy}, class: "info-btn #{@toy.may_play?}"
+= link_to 'Eat', { controller: :toys, action: :show, event: 'eat', state: 'ate', toy_id: @toy}, class: "info-btn #{@toy.may_eat?}"
+= link_to 'Training', { controller: :toys, action: :show, event: 'train', state: 'trained', toy_id: @toy}, class: "info-btn #{@toy.may_train?}"
+= link_to 'Wake up !!!', { controller: :toys, action: :show, event: 'wake_up', state: 'wake_up', toy_id: @toy}, class: "info-btn #{@toy.may_wake_up?}"
 %br
 = @toy.log_status_change

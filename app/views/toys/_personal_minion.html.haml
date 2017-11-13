@@ -7,3 +7,6 @@
     State:
     = @toy.aasm_state
 %img{ src: asset_path('1.png'), alt: 'Select state', id: 'minion-img', height: '250', width: '200'}
+%br
+= link_to 'Go home', current_user, class: 'cta-btn'
+= link_to 'Send History', { controller: :toys, action: :send_history, id: @toy}, class: "main-btn", method: :post

@@ -1,3 +1,29 @@
 // Place all the styles related to the Toys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blue: #82d2e5;
+
+.active_button {
+	opacity: 0.6;
+	background-color: red;
+	&:hover{
+		background-color: red;
+	}
+}
+
+.false{
+	cursor: no-drop;
+	// display: none;
+	background-color: red;
+	opacity: 0.1;
+}
+
+.false{
+	&:active{
+		pointer-events: none;
+	}
+	&:hover {
+		background-color: red;
+	}
+}

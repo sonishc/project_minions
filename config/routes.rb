@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :toys
   end
-  # post "/toys", to: 'toys#update'
+  post "/send_history", to: 'toys#send_history'
   root to: 'homes#index'
 end
