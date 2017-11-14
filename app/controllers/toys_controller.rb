@@ -20,8 +20,7 @@ class ToysController < ApplicationController
   end
 
   def send_history
-    @toy = Toy.find_by(id: params[:id], user_id: current_user.id)
-    @toy.send_mail
+    Toy.find_by(id: params[:id], user_id: current_user.id).send_mail
   end
 
   private
