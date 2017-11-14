@@ -88,6 +88,9 @@ select {
 	@include btn-background($blue);
 }
 
+/* Toys csv table
+============================================= */
+
 .app-frame {
   border: 2px solid $orange;
   width: 55%;
@@ -95,14 +98,6 @@ select {
   padding: 15px;
 }
 
-.person-block {
-	h2{
-		text-align: left;
-		padding-left: 10%;
-		width: 75%;
-		font-size: 14px;
-	}
-}
 .csv_toys {
 	border: 1px solid orange;
 	padding: 10px;

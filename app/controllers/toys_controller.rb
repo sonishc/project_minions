@@ -2,9 +2,7 @@ class ToysController < ApplicationController
   def show
     @toys = current_user.toys
     @toy = Toy.find_by(id: params[:id], user_id: current_user.id)
-    return unless params[:state]
-    return unless @toy.may_event?(params[:event])
-    @toy.send("#{params[:event]}!")
+    @toy.call_state(params[:state], params[:event])
   end
 
   def new

@@ -1,11 +1,11 @@
-class RegistrationsController < Devise::RegistrationsController 
+class RegistrationsController < Devise::RegistrationsController
   def create
     super
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
-      flash[:success] = "Please confirm your email address to continue"
+      flash[:success] = 'Please confirm your email address to continue'
     else
-      flash[:error] = "Ooooppss, something went wrong!"
+      flash[:error] = 'Ooooppss, something went wrong!'
     end
   end
 

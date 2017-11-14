@@ -52,6 +52,12 @@ class Toy < ApplicationRecord
     end
   end
 
+  def call_state(state, event)
+    return unless state
+    return unless may_event?(event)
+    send("#{event}!")
+  end
+
   private
 
   def add_log
