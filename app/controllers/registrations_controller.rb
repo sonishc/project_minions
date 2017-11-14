@@ -1,4 +1,14 @@
-class RegistrationsController < Devise::RegistrationsController
+class RegistrationsController < Devise::RegistrationsController 
+  def create
+    super
+    if @user.save
+      UserMailer.registration_confirmation(@user).deliver
+      flash[:success] = "Please confirm your email address to continue"
+    else
+      flash[:error] = "Ooooppss, something went wrong!"
+    end
+  end
+
   private
 
   def add_new_user_params
@@ -7,10 +17,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    add_new_user_params
-  end
-
-  def account_update_params
     add_new_user_params
   end
 end
