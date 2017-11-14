@@ -9,4 +9,11 @@
   = link_to 'Go to minions', user_toy_url(current_user, @users_toy), type: 'submit', class: 'cta-btn'
   %div
     = flash[:notice]
-%div
+  %div
+    %p
+      Download:
+      = link_to 'CSV', user_path( controller: :toys, action: :index, format: 'csv' )
+      %table{ class: 'csv_toys' }  
+        %tr
+          Personal minions
+        = render partial: "toy", collection: @toys

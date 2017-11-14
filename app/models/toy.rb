@@ -43,6 +43,15 @@ class Toy < ApplicationRecord
     SendEmailJob.set(wait: 20.seconds).perform_later(id, user_id)
   end
 
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |toy|
+        csv << toy.attributes.values_at(*column_names)
+      end
+    end
+  end
+
   private
 
   def add_log
