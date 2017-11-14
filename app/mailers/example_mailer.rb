@@ -5,6 +5,6 @@ class ExampleMailer < ActionMailer::Base
     @user = user
     @toy = toy
     @logs = logs
-    mail(to: @user.email, subject: 'Sample Email')
+    mail(to: @user.email, subject: 'Minion event')
   end
 end
