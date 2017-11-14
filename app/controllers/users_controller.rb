@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       user.email_activate
       flash[:success] = "Welcome to the Sample App! Your email has been confirmed.
       Please sign in to continue."
-      redirect_to user_path
+      render 'show'
     else
       flash[:error] = "Sorry. User does not exist"
       render inline: "<%= current_user.name; flash[:error]%>"
