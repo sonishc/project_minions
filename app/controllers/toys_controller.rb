@@ -14,7 +14,7 @@ class ToysController < ApplicationController
     if @toy.save
       redirect_to current_user
     else
-      flash[:notice] = 'Bad :('
+      flash[:notice] = 'Incorrect name or empty field :('
       render 'new'
     end
   end
