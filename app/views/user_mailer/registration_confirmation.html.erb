@@ -4,10 +4,20 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi, <%= @user.name %>,</h1>
+    <h1>Hi, <%= !@user.name.empty? ? @user.name : @user.email %></h1>
     <p>
     Thanks for registering! To confirm your registration click the URL below.
     </p>
-    <%= link_to 'Follow the link for confirm email', confirm_email_user_url(@user.confirm_token) %>
+    <%= link_to 'Follow the link for confirm email', confirm_email_user_url(@user.confirm_token), 
+    style: "background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;" %>
   </body>
 </html>

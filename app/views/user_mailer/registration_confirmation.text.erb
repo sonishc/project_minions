@@ -1,4 +1,4 @@
-Hi <%= @user.name %>,
+Hi <%= !@user.name.empty? ? @user.name : @user.email %>,
 
 Thanks for registering! To confirm your registration click the URL below.
 
