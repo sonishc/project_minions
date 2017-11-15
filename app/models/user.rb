@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   before_create :confirmation_token
   has_many :toys
+  validates :email, :age, :sex, presence: true
+  validates :age, numericality: { only_integer: true, less_than: 140 }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

@@ -1,6 +1,7 @@
 class Toy < ApplicationRecord
   belongs_to :user
   has_many :logs
+  validates :name, presence: true
 
   include AASM
 
