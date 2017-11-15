@@ -2,6 +2,7 @@ $orange: #ffa600;
 $grey: #f3f3f3; 
 $blue: #82d2e5;
 $pink: #ff0080;
+$green: #90EE90;
 
 $font-primary: 'Roboto', sans-serif; 
 $font-secondary: Arial, Helvetica, sans-serif;
@@ -44,6 +45,12 @@ select {
 		div{
 			flex: 1;
 		}
+}
+
+.toys {
+	margin: 0 auto;
+	width: 100%;
+	display: inline-block;
 }
 
 /* PLACEHOLDER 
@@ -95,22 +102,34 @@ select {
   border: 2px solid $orange;
   width: 55%;
   margin-top: 5%;
-  padding: 15px;
+	padding: 15px;
+		a {
+			color: #FFF0F5;
+		}
 }
 
-.csv_toys {
-	border: 1px solid orange;
-	padding: 10px;
-}
-
-.alert {
-
-} 
-
-.alert-info {
-	color: $blue;
+.alert-success {
+	color: $green;
 }
 
 .alert-error {
-	color: red;
+	color: $pink;
+	opacity: 0.9;
+	text-shadow: none;
+	font-size: 14px;
+}
+
+.block-for-pages {
+	background-color: lightblue;
+	color:white;
+	max-width: 50%;
+	border: 1px solid #778899;
+	display: inline-block;
+	font-size: 20px;
+	padding: 3%;
+	text-shadow: 1px 1px #000000;
+	border-radius: 10%;
+		div p a {
+			color: #FFB6C1;
+		}
 }

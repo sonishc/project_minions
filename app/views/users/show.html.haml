@@ -1,19 +1,16 @@
-%div{ class: 'sign-out' }
-  = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'main-btn'
-  = link_to 'Create minion', new_user_toy_url(current_user, @toy), action: 'create', class: 'cta-btn'
-%div{ class: 'container'}
+%div{ class: 'block-for-pages' }
+  %div{ class: 'sign-out' }
+    = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'main-btn'
+    = link_to 'Create minion', new_user_toy_url(current_user, @toy), action: 'create', class: 'cta-btn'
+  %div{ class: 'container'}
+    %div
+      = render 'personal_info'
   %div
-    = render 'personal_info'
-%div
-- unless @toys.blank?
-  = link_to 'Go to minions', user_toy_url(current_user, @toys.last.id), type: 'submit', class: 'cta-btn'
-  %div
-    = flash[:notice]
-  %div
-    %p
-      Download:
-      = link_to 'CSV', user_path( controller: :toys, action: :index, format: 'csv' )
-      %table{ class: 'csv_toys' }  
-        %tr
-          Personal minions
-        = render partial: "toy", collection: @toys
+  - unless @toys.blank?
+    = link_to 'Go to minions', user_toy_url(current_user, @toys.last.id), type: 'submit', class: 'cta-btn'
+    %div
+      = flash[:notice]
+    %div
+      %p
+        Download:
+        = link_to 'CSV', user_path( controller: :toys, action: :index, format: 'csv' )

@@ -1,10 +1,9 @@
-%div{ class: 'container' }
+%div{ class: 'block-for-pages' }
   %div
     = render ('control_buttons')
   %div
     = render ('personal_minion')
-  %div
+  %div{ class: 'toys'}
     = render ('select_toy')
-%div{ class: 'container' }
-  %div
-    = render ('history')
+%div
+  = render ('history')

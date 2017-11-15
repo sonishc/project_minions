@@ -1,42 +1,44 @@
-%h2 Sign up
+%div{ class: 'registration'}
+  %h2 Sign up
 
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  
-  %div
-    = f.label :name
-    %br
-    = f.text_field :name, autofocus: true
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    %div{class: 'alert-error'}
+      = devise_error_messages!
+    
+    %div
+      = f.label :name
+      %br
+      = f.text_field :name, autofocus: true
 
-  %div
-    = f.label :sex
-    %br
-    male
-    = f.radio_button(:sex, 'male')
-    female
-    = f.radio_button(:sex, 'female') 
+    %div
+      = f.label :sex
+      %br
+      male
+      = f.radio_button(:sex, 'male')
+      female
+      = f.radio_button(:sex, 'female') 
 
-  %div
-    = f.label :age
-    %br
-    = f.text_field :age
+    %div
+      = f.label :age
+      %br
+      = f.text_field :age
 
-  %div
-    = f.label :email
-    %br
-    = f.email_field :email
+    %div
+      = f.label :email
+      %br
+      = f.email_field :email
 
-  %div
-    = f.label :password
-    %br
-    = f.password_field :password
+    %div
+      = f.label :password
+      %br
+      = f.password_field :password
 
-  %div
-    = f.label :password_confirmation
-    %br
-    = f.password_field :password_confirmation
+    %div
+      = f.label :password_confirmation
+      %br
+      = f.password_field :password_confirmation
 
-  %div
-    = f.submit 'Sign up', class: 'main-btn'
+    %div
+      = f.submit 'Sign up', class: 'main-btn'
 
-= render 'devise/shared/links'
+  = render 'devise/shared/links'

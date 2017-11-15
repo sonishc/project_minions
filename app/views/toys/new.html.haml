@@ -1,12 +1,13 @@
-%h1
-  Add Minion
-%div{class: 'alert-error'}
-  = flash[:notice]
-= form_for [current_user, @toy] do |f|
-  %span
-    Name:
-  = f.text_field :name
-  = f.hidden_field(:user_id, {value: current_user.id})
-  = f.submit "Create", class: 'main-btn'
+%div{ class: 'block-for-pages' }
+  %h1
+    Add Minion
+  %div{class: 'alert-error'}
+    = flash[:notice]
+  = form_for [current_user, @toy] do |f|
+    %span
+      Name:
+    = f.text_field :name
+    = f.hidden_field(:user_id, {value: current_user.id})
+    = f.submit "Create", class: 'main-btn'
 
-= link_to 'Back', current_user, class: 'info-btn'
+  = link_to 'Back', current_user, class: 'info-btn'

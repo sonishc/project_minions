@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     user_confirm?
-    @toys = current_user.toys.order(:name)
+    @toys = current_user.toys
     respond_to do |format|
       format.html
       format.csv { send_data @toys.to_csv, filename: 'Personal toys.csv' }
