@@ -1,0 +1,24 @@
+!!! 5
+%html
+  %head
+    %title Minion
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  %body
+    %header
+    %section
+      %article
+      %br
+        %div{ class: 'container' }
+          %div
+            %h1
+              Hi,
+              = !current_user.name.empty? ? current_user.name : current_user.email
+        %div{ class: 'container' }
+          %div{ class: 'unconfirm-user' }           
+            %h2
+              Please activate your account by
+              following the instructions in the account confirmation email
+              you received to proceed
+            If you have any problems with account confirmation email, please send a message to this address:
+            = mail_to "onixsonic@gmail.com"
+      = Time.current
