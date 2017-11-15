@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :users, only: :show do
-    resources :toys, only: %i[show new]
+    resources :toys
     member do
       get '/confirm_email', to: 'users#confirm_email'
     end
