@@ -1,13 +1,9 @@
-describe User do
-  
-  describe "#invite" do
-    it "enqueues sending the invitation" do
-      allow(SendNewUserInvitationJob).to receive(:perform_later)
-      user = build(:user)
+require 'rails_helper'
 
-      user.invite
-
-      expect(SendNewUserInvitationJob).to have_received(:perform_later)
-    end
-  end
+RSpec.describe User, type: :model do
+  it { should validate_presence_of :age }
+  it { should validate_presence_of :sex }
+  it { should validate_numericality_of(:age) }
+  it { should_not allow_value(-1).for(:age) }
+  it { should allow_value(6).for(:age) }
 end
