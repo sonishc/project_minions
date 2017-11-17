@@ -1,8 +1,6 @@
 %div{ class: 'block-for-pages' }
   %h1
     Add Minion
-  %div{class: 'alert-error'}
-    = flash[:notice]
   = form_for [current_user, @toy] do |f|
     %span
       Name:

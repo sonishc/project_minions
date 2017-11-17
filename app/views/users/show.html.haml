@@ -9,8 +9,6 @@
   - unless @toys.blank?
     = link_to 'Go to minions', user_toy_url(current_user, @toys.last.id), type: 'submit', class: 'cta-btn'
     %div
-      = flash[:notice]
-    %div
       %p
         Download:
         = link_to 'CSV', user_path( controller: :toys, action: :index, format: 'csv' )
