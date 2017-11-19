@@ -1,13 +1,14 @@
-%h1 
-  Personal information
-%h2
-  = current_user.name
-%h2
-  Sex:  
-  = current_user.sex || 'empty'
-%h2
-  Age:
-  = current_user.age
-%h2
-  Email: 
-  = current_user.email
+#personal_info
+  %h1 
+    Personal information
+  %h2
+    = current_user.name
+  %h2
+    Sex:  
+    = current_user.sex || 'empty'
+  %h2
+    Age:
+    = current_user.age
+  %h2
+    Email: 
+    = current_user.email

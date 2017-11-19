@@ -1,8 +1,10 @@
-%h2
-	History path
-%br
-- @toy.logs.each_with_index do |log, index|
-	%em
-		%span (
-		= log.event 
-		%span )
+.history#history_toy
+	%h2
+		History
+	- @toy.logs.each_with_index do |log, index|
+		%em
+			%span (
+			= log.event 
+			%span )
+	%br
+	= link_to 'Send History', { controller: :toys, action: :send_history, id: @toy}, class: "main-btn", method: :post

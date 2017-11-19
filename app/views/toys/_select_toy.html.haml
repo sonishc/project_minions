@@ -1,4 +1,5 @@
-%h2
-  Select Toy
-- @toys.map do |toy|
-  = link_to toy.name, user_toy_url(current_user.id, toy.id), class: @toy == toy ? 'info-btn active_button' : 'info-btn'
+#select_toy
+  %h2
+    Select Toy
+  - @toys.map do |toy|
+    = link_to toy.name, user_toy_url(current_user.id, toy.id), class: @toy == toy ? 'info-btn active_button' : 'info-btn'

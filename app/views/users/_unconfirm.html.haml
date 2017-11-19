@@ -8,13 +8,13 @@
     %section
       %article
       %br
-        %div{ class: 'container' }
+        .container
           %div
             %h1
               Hi,
               = !current_user.name.empty? ? current_user.name : current_user.email
-        %div{ class: 'container' }
-          %div{ class: 'unconfirm-user' }           
+        .container
+          .unconfirm-user         
             %h2
               Please activate your account by
               following the instructions in the account confirmation email

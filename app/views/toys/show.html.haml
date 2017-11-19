@@ -1,11 +1,8 @@
-%div{ class: 'block-for-pages' }
-  %div
-    = render ('control_buttons')
-  %div
+#toy
+  .block-for-pages
     = render ('personal_minion')
-  %div{ class: 'toys'}
-    = render ('select_toy')
-  %div
+    = render ('control_buttons')
+    .toys
+      = render ('select_toy')
     = render ('delete_toy')
-%div
   = render ('history')

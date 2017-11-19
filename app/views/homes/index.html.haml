@@ -1,9 +1,9 @@
-%div(class='app-frame')
+.app-frame
   %h1 The minions 
   %h2 Simple application, about what do the finite state machine
   %img{ src: asset_path('minions.png'), alt: 'minion-img', width: '100%'}
   %br
-  - unless current_user
+  - if current_user.nil?
     = link_to "Login", 'users/sign_in', class: 'main-btn'
     = link_to "Register", 'users/sign_up', class: 'main-btn'
   - else
