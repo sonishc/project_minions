@@ -14,8 +14,8 @@ class UsersController < ApplicationController
       user.email_activate
       render 'show'
     else
-      flash[:error] = 'Sorry. User does not exist'
-      render inline: '<%= current_user.name; flash[:error]%>'
+      flash.now[:error] = 'Sorry. User does not exist'
+      render inline: '<%= current_user.name; flash.now[:error]%>'
     end
   end
 

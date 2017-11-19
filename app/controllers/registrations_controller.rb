@@ -3,7 +3,6 @@ class RegistrationsController < Devise::RegistrationsController
     super
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
-      flash[:success] = 'Please confirm your email address to continue'
     else
       flash[:error] = 'Ooooppss, something went wrong!'
     end
