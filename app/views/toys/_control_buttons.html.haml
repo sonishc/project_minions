@@ -1,9 +1,10 @@
-%h1
-  Control buttons
-= link_to "Sleep", "javascript:sendCurrentState('sleep', 'sleeped', #{@toy.id})", class: "info-btn #{@toy.may_sleep?}"
-= link_to 'Play', "javascript:sendCurrentState('play', 'played', #{@toy.id})", class: "info-btn #{@toy.may_play?}"
-= link_to 'Eat', "javascript:sendCurrentState('eat', 'ate', #{@toy.id})", class: "info-btn #{@toy.may_eat?}"
-= link_to 'Training', "javascript:sendCurrentState('train', 'trained', #{@toy.id})", class: "info-btn #{@toy.may_train?}"
-= link_to 'Wake up !!!', "javascript:sendCurrentState('wake_up', 'wake_up', #{@toy.id})", class: "info-btn #{@toy.may_wake_up?}"
-%br
-= @toy.log_status_change
+#control_buttons
+  %h1
+    I need
+  = link_to "Sleep",{action: 'event_switch', event: 'sleep', state: 'sleeped', id: @toy.id}, remote: true, class: "info-btn #{@toy.may_sleep?}"
+  = link_to 'Play',{action: 'event_switch', event: 'play', state: 'played', id: @toy.id}, remote: true, class: "info-btn #{@toy.may_play?}"
+  = link_to 'Eat',{action: 'event_switch', event: 'eat', state: 'ate', id: @toy.id}, remote: true, class: "info-btn #{@toy.may_eat?}"
+  = link_to 'Training',{action: 'event_switch', event: 'train', state: 'trained', id: @toy.id}, remote: true, class: "info-btn #{@toy.may_train?}"
+  = link_to 'Wake up !!!',{action: 'event_switch', event: 'wake_up', state: 'wake_up',id: @toy.id}, remote: true, class: "info-btn #{@toy.may_wake_up?}"
+  %br
+  = @toy.log_status_change

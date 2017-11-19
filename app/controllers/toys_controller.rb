@@ -2,10 +2,7 @@ class ToysController < ApplicationController
   def show
     @toys = current_user.toys
     @toy = @toys.find_by(id: params[:id])
-    respond_to do |format|
-      format.html
-      format.json { render json: @toy.to_json }
-    end
+    redirect_to user_path unless current_user.toys.any?
   end
 
   def new
@@ -24,12 +21,7 @@ class ToysController < ApplicationController
 
   def destroy
     @toy = Toy.find(params[:id]).destroy
-    @toy.logs.destroy_all
-    if current_user.toys.last.nil?
-      redirect_to user_path
-    else
-      redirect_to user_toy_url(current_user, current_user.toys.last.id)
-    end
+    redirect_to [current_user, current_user.toys.last]
   end
 
   def event_switch
