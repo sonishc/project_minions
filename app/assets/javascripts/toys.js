@@ -1,4 +1,4 @@
-$(document).on('mousedown', '#deleteBtn', () => {
+$(document).on('mousedown', '#deleteBtn', function(event){
   var modal = document.getElementById('deleteModal');
   var btn = document.getElementById('deleteBtn');
 
