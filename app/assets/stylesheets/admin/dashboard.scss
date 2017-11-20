@@ -1,0 +1,38 @@
+// Place all the styles related to the admin/dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dashboard {
+  color: white;
+}
+
+.header {
+  background-color: green;
+}
+
+.dashboard-side {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+}
+
+.left-side {
+  background-color: blue;
+  width: 20%;
+    a{
+      color: white;
+    }
+}
+
+.right-side{
+  color: black;
+  width: 80%;
+}
+
+@media all and (max-width: 600px) {
+  /* We tell both sidebars to share a row */
+  .left-side { 
+    flex: 1 100%;
+  }
+}
+.users{}

@@ -11,5 +11,8 @@ Rails.application.routes.draw do
       get '/confirm_email', to: 'users#confirm_email'
     end
   end
+  scope module: 'admin' do
+    get 'admin', to: 'dashboard#index', as: '/dashboard'
+  end
   root to: 'homes#index'
 end
