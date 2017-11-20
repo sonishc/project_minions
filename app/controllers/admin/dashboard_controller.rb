@@ -6,9 +6,5 @@ class Admin::DashboardController < ApplicationController
   private
 
   def authorize
-    if current_user.name == 'asf'
-    else
-    redirect_to [current_user]
-    end
   end
 end

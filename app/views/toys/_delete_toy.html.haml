@@ -1,2 +1,11 @@
-#delete
-= link_to 'Delete minion', user_toy_url(current_user, @toy), method: :delete, data: { confirm: 'Are you sure?' }, class: 'main-btn'
+%button#deleteBtn.delete-toys
+  Delete minion
+#deleteModal.modal
+  .modal-content
+    .modal-header
+      %h2 
+        Are you sure?
+    .modal-body
+      = link_to 'Yes, I want delete his', user_toy_url(current_user, @toy), method: :delete, class: 'delete-toys aprove'
+      %span.delete-toys.close
+        No, back to minion profile
