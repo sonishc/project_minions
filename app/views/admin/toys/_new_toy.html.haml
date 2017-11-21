@@ -1,0 +1,7 @@
+#new-toy-dashboard
+  %br
+  #form-for-new-toy.form-for
+    = form_for [:admin, @toy] do |f|
+      = f.text_field :name, {required: ""}
+      = f.collection_select :user_id, User.all, :id, :name, prompt: true
+      = f.submit 'Create minion'

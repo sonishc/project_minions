@@ -4,10 +4,12 @@
     %title Minion
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tag
   %body
+    = custom_bootstrap_flash
     .dashboard#admin-dashboard
       .header
-        %h1 Admin Dashboard
+        %h1 Admin panel
         %h2= current_user.name
         %p Manage system
       .dashboard-side

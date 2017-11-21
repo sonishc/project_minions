@@ -1,27 +1,25 @@
-#tyos-dashboard.toys
+#toys-dashboard.toys
   %h1 
     All toys
-    %button.badge.badge-secondary Create new
+    = link_to 'Create new',{action: :index}, remote: true, class: 'badge badge-secondary'
   %table.table.table-striped
     %thead
       %tr
         %td{:scope => "col"} ID
         %td{:scope => "col"} Name
         %td{:scope => "col"} State
-        %td{:scope => "col"} Email
         %td{:scope => "col"} Owner
         %td{:scope => "col"} Manage toys
     %tbody
       - Toy.all.order(:id).each do |toy|
         %tr
           %td{:scope => "row"}= toy.id
-          %td= toy.id
           %td= toy.name
           %td= toy.aasm_state
-          %td= User.select(:name).find_by(id: toy.user_id).name
+          %td= User.select(:name).find_by(id: toy.user_id)&.name
           %td
-            %button.btn.btn-info edit
-            %button.btn.btn-danger delete
+            = link_to 'Edit',{ action: :edit, id: toy.id }, class: 'btn btn-info'            
+            = link_to 'Delete', [:admin, toy], method: :delete, class: 'btn btn-danger'     
             = link_to 'view',{ action: :show, id: toy.id }, class: 'btn btn-success'
 
           

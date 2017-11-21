@@ -1,0 +1,7 @@
+#edit-toy-dashboard
+  %br
+  #form-for-edit-toy.form-for
+    = form_for [:admin, @toy] do |f|
+      = f.label :name
+      = f.text_field :name, {required: ""}
+      = f.submit 'Edit'

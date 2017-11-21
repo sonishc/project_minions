@@ -1,7 +1,7 @@
 class ToysController < ApplicationController
   def show
     @toys = current_user.toys
-    @toy = @toys.find_by(id: params[:id])
+    @toy = @toys.find(params[:id])
     redirect_to user_path unless current_user.toys.any?
   end
 
@@ -20,12 +20,12 @@ class ToysController < ApplicationController
   end
 
   def destroy
-    @toy = Toy.find(params[:id]).destroy
+    Toy.find(params[:id]).destroy
     redirect_to [current_user, current_user.toys.last]
   end
 
   def event_switch
-    @toy = current_user.toys.find_by(id: params[:id])
+    @toy = current_user.toys.find(params[:id])
     @toy.call_state(params[:state], params[:event])
     redirect_to [current_user, @toy]
   end

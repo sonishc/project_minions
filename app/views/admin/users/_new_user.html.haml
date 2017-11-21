@@ -1,0 +1,27 @@
+#new-user-dashboard
+  %br
+  #form-for-new.form-for
+    = form_for [:admin, @user]  do |f|
+      = f.label :name
+      = f.text_field :name, {required: ""}
+      = f.label :gender
+      %br
+        %label.radio-inline
+          = f.radio_button(:sex, 'male')
+          male
+      
+        %label.radio-inline
+          = f.radio_button(:sex, 'female')
+          fmale
+      = f.label :age
+      = f.number_field :age, within: 4..140
+      %br
+      = f.label :email
+      = f.email_field :email, {required: ""}
+      = f.label :password
+      = f.password_field :password, {required: ""}
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, {required: ""}
+      = f.hidden_field(:email_confirmed, {value: true})
+      = f.hidden_field(:confirm_token, {value: nil})
+      = f.submit 'Create'

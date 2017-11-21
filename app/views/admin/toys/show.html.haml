@@ -11,4 +11,4 @@
         %td{:scope => "row"}= @toy.id
         %td= @toy.name
         %td= @toy.aasm_state
-        %td= User.select(:name).find_by(id: @toy.user_id).name
+        %td= User.select(:name).find_by(id: @toy.user_id)&.name

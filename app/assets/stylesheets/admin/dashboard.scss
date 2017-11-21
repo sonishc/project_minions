@@ -13,7 +13,6 @@
 }
 
 .left-side {
-  background-color: #eeeeee;
   width: 20%;
     a{
       display: block;
@@ -39,6 +38,23 @@
     flex: 1 100%;
   }
 }
-.users{
-  
+
+.form-for{
+  form {
+    width: 20%;
+    padding: 25px 25px;
+    background-color: rgb(255, 129, 129);
+    border-radius: 5%;
+    color: rgb(255, 241, 241);
+  }
+    input {
+      width: 100%;
+      margin: 8px 0;
+      box-sizing: border-box;
+      background-color: white;
+      color: rgb(56, 53, 53);
+    }
+    input[type=number]{
+      width: 30%;
+    }
 }
