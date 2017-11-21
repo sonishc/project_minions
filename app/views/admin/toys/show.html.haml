@@ -1,0 +1,14 @@
+#toy-dashboard
+  %table.table.table-striped
+    %thead
+      %tr
+        %td{:scope => "col"} ID
+        %td{:scope => "col"} Name
+        %td{:scope => "col"} State
+        %td{:scope => "col"} Owner
+    %tbody
+      %tr
+        %td{:scope => "row"}= @toy.id
+        %td= @toy.name
+        %td= @toy.aasm_state
+        %td= User.select(:name).find_by(id: @toy.user_id).name

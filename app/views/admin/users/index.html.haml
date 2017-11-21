@@ -1,0 +1,27 @@
+#users-dashboard.users
+  %h1 
+    All users
+    %button.badge.badge-secondary Create new
+  %table.table.table-striped
+    %thead
+      %tr
+        %td{:scope => 'col'} ID
+        %td{:scope => 'col'} Name
+        %td{:scope => 'col'} Age
+        %td{:scope => 'col'} Gender
+        %td{:scope => 'col'} Email
+        %td{:scope => 'col'} Role
+        %td{:scope => 'col'} Manage users
+    %tbody
+      - @users.all.each do |user|
+        %tr
+          %td{:scope => 'row'}= user.id
+          %td= user.name
+          %td= user.age
+          %td= user.sex
+          %td= user.email
+          %td= user.roles[0]&.name
+          %td
+            %button.btn.btn-info edit
+            %button.btn.btn-danger delete
+            = link_to 'view',{ action: :show, id: user.id }, class: 'btn btn-success'

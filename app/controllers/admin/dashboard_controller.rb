@@ -1,10 +1,9 @@
 class Admin::DashboardController < ApplicationController
+  layout 'dashboard'
   before_action :authorize
 
   def index; end
 
-  private
+  def show; end
 
-  def authorize
-  end
 end

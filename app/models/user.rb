@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   before_create :confirmation_token
   has_many :toys
+  has_many :assignments
+  has_many :roles, through: :assignments
   validates :age, :sex, presence: true
   validates :age, numericality: { only_integer: true,
                                   less_than: 140, greater_than: 4 }

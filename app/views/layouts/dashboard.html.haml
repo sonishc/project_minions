@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    %title Minion
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .dashboard#admin-dashboard
+      .header
+        %h1 Admin Dashboard
+        %h2= current_user.name
+        %p Manage system
+      .dashboard-side
+        #left-side-dashboard.left-side
+          #navigation
+            = link_to 'Manage users', admin_users_path
+            %br
+            = link_to 'Manage toys', admin_toys_path
+            %br
+            = link_to 'Return to the site', current_user
+        #righ-side-dashboard.right-side
+          = yield

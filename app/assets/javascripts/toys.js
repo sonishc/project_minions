@@ -2,7 +2,7 @@ $(document).on('mousedown', '#deleteBtn', function(event){
   var modal = document.getElementById('deleteModal');
   var btn = document.getElementById('deleteBtn');
 
-  var span = document.getElementsByClassName('close')[0];
+  var span = document.getElementsByClassName('close-delete')[0];
 
   btn.onclick = function() {
       modal.style.display = 'block';

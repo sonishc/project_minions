@@ -1,13 +1,9 @@
-// Place all the styles related to the admin/dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .dashboard {
   color: white;
 }
 
 .header {
-  background-color: green;
+  background-color: rgb(255, 129, 129);
 }
 
 .dashboard-side {
@@ -17,14 +13,22 @@
 }
 
 .left-side {
-  background-color: blue;
+  background-color: #eeeeee;
   width: 20%;
     a{
+      display: block;
+      font-size: 22px;
+      color: white;
+      background-color: rgb(255, 129, 129);
+      padding: 2%;
+    }
+    a:hover{
       color: white;
     }
 }
 
 .right-side{
+  margin: 0 auto;
   color: black;
   width: 80%;
 }
@@ -35,4 +39,6 @@
     flex: 1 100%;
   }
 }
-.users{}
+.users{
+  
+}

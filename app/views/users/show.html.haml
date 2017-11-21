@@ -4,8 +4,8 @@
     = link_to 'Create minion', new_user_toy_url(current_user, @toy), action: 'create', class: 'cta-btn'
     - unless @toys.blank?
       = link_to 'Go to minions', user_toy_url(current_user, @toys.last.id), type: 'submit', class: 'main-btn'
-  .container
-    = render 'personal_info'
+  %br
+  = render 'personal_info'
   %div
     %div
       %p

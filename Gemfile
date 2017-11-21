@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'aasm'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'coffee-rails', '~> 4.2'
 gem 'delayed_job_active_record'
 gem 'devise'
@@ -14,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg'
 gem 'puma', '~> 3.7'
+gem 'pundit'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
 gem 'toastr-rails'
