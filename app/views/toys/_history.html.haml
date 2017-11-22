@@ -7,4 +7,6 @@
 			= log.event 
 			%span )
 	%br
-	= link_to 'Send History', { controller: :toys, action: :send_history, id: @toy}, class: "main-btn", method: :post
+	= link_to 'Send History',
+		{ controller: :toys, action: :send_history, id: @toy},
+		class: "cta-btn", method: :post

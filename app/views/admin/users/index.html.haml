@@ -1,23 +1,28 @@
 #users-dashboard.users
   %h1 
     All users
-    = link_to 'Create new',{action: :index}, remote: true, class: 'badge badge-secondary'
+    = link_to 'Create new',
+      {action: :index}, remote: true,
+      class: 'badge badge-secondary'
   %table.table.table-striped
     %thead
       %tr
-        %td{:scope => 'col'} ID
-        %td{:scope => 'col'} Name
-        %td{:scope => 'col'} Age
-        %td{:scope => 'col'} Gender
-        %td{:scope => 'col'} Email
-        %td{:scope => 'col'} Sign in count
-        %td{:scope => 'col'} Hours on site
-        %td{:scope => 'col'} Role
-        %td{:scope => 'col'} Manage users
+        %td ID
+        %td
+        %td Name
+        %td Age
+        %td Gender
+        %td Email
+        %td Sign in count
+        %td Hours on site
+        %td Role
+        %td Manage users
     %tbody
       - @users.all.each do |user|
         %tr
-          %td{:scope => 'row'}= user.id
+          %td= user.id
+          %td
+            =image_tag user.image.url(:thumb)
           %td= user.name
           %td= user.age
           %td= user.sex
@@ -26,6 +31,11 @@
           %td= ((Time.now - user.created_at) / 1.hour).round
           %td= user.roles[0]&.name
           %td
-            = link_to 'Edit',{ action: :edit, id: user.id }, class: 'btn btn-info'
-            = link_to 'Delete', user, method: :delete, class: 'btn btn-danger'
-            = link_to 'view',{ action: :show, id: user.id }, class: 'btn btn-success'
+            = link_to 'Edit',
+              { action: :edit, id: user.id },
+              class: 'btn btn-info'
+            = link_to 'Delete', user,
+              method: :delete, class: 'btn btn-danger'
+            = link_to 'view',
+              { action: :show, id: user.id },
+              class: 'btn btn-success'

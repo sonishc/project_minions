@@ -4,4 +4,4 @@
     = form_for [:admin, @toy] do |f|
       = f.text_field :name, {required: ""}
       = f.collection_select :user_id, User.all, :id, :name, prompt: true
-      = f.submit 'Create minion'
+      = f.submit 'Create minion', class: 'main-btn'

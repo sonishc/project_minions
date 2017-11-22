@@ -1,4 +1,4 @@
-.registration
+.form-for
   %h2 Sign up
 
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -10,17 +10,19 @@
       = f.text_field :name, autofocus: true
 
     %div
-      = f.label :gender
+      = f.label :Gender
       %br
-      male
-      = f.radio_button(:sex, 'male')
-      female
-      = f.radio_button(:sex, 'female') 
+      %label.radio-inline
+        = f.radio_button(:sex, 'male')
+        male
+      %label.radio-inline
+        = f.radio_button(:sex, 'female')
+        fmale 
 
     %div
       = f.label :age
       %br
-      = f.text_field :age
+      = f.number_field :age, within: 4..140
 
     %div
       = f.label :email

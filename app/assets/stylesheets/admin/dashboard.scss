@@ -1,9 +1,17 @@
+$lightgreen: #CBF078;
+$yellow: #F3DA60;
+$grey: #999A9C;
+$white: #FFFFFF;
+$black: #000000;
+$red: #E46161;
+$orange: #F1B963;
+
 .dashboard {
-  color: white;
+  color: $white;
 }
 
 .header {
-  background-color: rgb(255, 129, 129);
+  background-color: $red;
 }
 
 .dashboard-side {
@@ -18,11 +26,11 @@
       display: block;
       font-size: 22px;
       color: white;
-      background-color: rgb(255, 129, 129);
+      background-color: $red;
       padding: 2%;
     }
     a:hover{
-      color: white;
+      color: $black;
     }
 }
 
@@ -43,7 +51,7 @@
   form {
     width: 20%;
     padding: 25px 25px;
-    background-color: rgb(255, 129, 129);
+    background-color: $red;
     border-radius: 5%;
     color: rgb(255, 241, 241);
   }
@@ -57,4 +65,7 @@
     input[type=number]{
       width: 30%;
     }
+    input[type="file"] {
+      background-color: $red;
+  }
 }

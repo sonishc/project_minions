@@ -1,14 +1,20 @@
 #personal_info
-  %h1 
-    Personal information
-  %h2
-    = current_user.name
-  %h2
-    Sex:  
-    = current_user.sex || 'empty'
-  %h2
-    Age:
-    = current_user.age
-  %h2
-    Email: 
-    = current_user.email
+  = image_tag current_user.image.url(:medium)
+  %br
+  .chose-personal-photo
+    = form_for current_user  do |f|
+      = f.file_field :image
+      = f.button 'Change new photo', class: 'btn-success'
+  .person-page
+    %p 
+      = current_user.name
+    %p
+      Sex:  
+      = current_user.sex || 'empty'
+    %p
+      Age:
+      = current_user.age
+    %p
+      Email: 
+      = current_user.email
+  

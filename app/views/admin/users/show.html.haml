@@ -2,15 +2,15 @@
   %table.table.table-striped
     %thead
       %tr
-        %td{:scope => "col"} ID
-        %td{:scope => "col"} Name
-        %td{:scope => "col"} Age
-        %td{:scope => "col"} Gender
-        %td{:scope => "col"} Email
-        %td{:scope => "col"} Toys count
+        %td ID
+        %td Name
+        %td Age
+        %td Gender
+        %td Email
+        %td Toys count
     %tbody
       %tr
-        %td{:scope => "row"}= @user.id
+        %td= @user.id
         %td= @user.name
         %td= @user.age
         %td= @user.sex

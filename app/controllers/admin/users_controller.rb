@@ -1,14 +1,11 @@
 class Admin::UsersController < ApplicationController
   layout 'dashboard'
   before_action :authorize
+  before_action :find_user, only: %i[show edit]
+  before_action :new, only: :index
 
   def index
-    new
-    @users = User.all
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @users = User.all.order('created_at DESC')
   end
 
   def new
@@ -25,19 +22,19 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def edit; end
 
   private
 
+  def find_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
-    params.require(:user).permit(:name, :sex, :age, :email, :confirm_token,
-                                 :email_confirmed, :password,
+    params.require(:user).permit(:name, :sex, :age, :email, :image,
+                                 :confirm_token, :email_confirmed, :password,
                                  :password_confirmation)
   end
 end

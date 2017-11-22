@@ -9,7 +9,6 @@
         %label.radio-inline
           = f.radio_button(:sex, 'male')
           male
-      
         %label.radio-inline
           = f.radio_button(:sex, 'female')
           fmale
@@ -18,6 +17,8 @@
       %br
       = f.label :email
       = f.email_field :email, {required: ""}
+      = f.label :image
+      = f.file_field :image
       = f.label :password
       = f.password_field :password, {required: ""}
       = f.label :password_confirmation

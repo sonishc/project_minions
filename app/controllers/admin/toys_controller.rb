@@ -1,11 +1,10 @@
 class Admin::ToysController < ApplicationController
   layout 'dashboard'
   before_action :authorize
+  before_action :new, :all_users, only: :index
 
   def index
-    new
-    @toys = Toy.all
-    @users = User.all
+    @toys = Toy.all.order(:name)
   end
 
   def new
@@ -48,6 +47,10 @@ class Admin::ToysController < ApplicationController
   end
 
   private
+
+  def all_users
+    @users = User.all
+  end
 
   def toy_params
     params.require(:toy).permit(%i[name user_id])
