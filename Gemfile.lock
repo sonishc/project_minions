@@ -91,6 +91,11 @@ GEM
       railties (>= 3.2, < 5.2)
     erubi (1.7.0)
     execjs (2.7.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
     ffi (1.9.18)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -258,6 +263,7 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   dotenv-rails
+  factory_girl_rails
   haml
   jbuilder (~> 2.5)
   jquery-rails
