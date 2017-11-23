@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    email 'laladdwl@gmail.com'
+    email 'valid@example.com'
     name 'Users'
     sex 'male'
     age 22
