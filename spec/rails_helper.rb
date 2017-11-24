@@ -5,8 +5,10 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
+require 'site_prism'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |file| require file }
+Dir[Rails.root.join('spec/page_objects/pages/**/*.rb')].sort.each { |file| require file }
 
 ActiveRecord::Migration.maintain_test_schema!
 
