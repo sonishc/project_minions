@@ -1,31 +1,33 @@
-#toys-dashboard.toys
-  %h1 
-    All toys
-    = link_to 'Create new',
-      { action: :index }, remote: true, class: 'badge badge-secondary'
-  %table.table.table-striped
-    %thead
-      %tr
-        %td ID
-        %td Name
-        %td State
-        %td Owner
-        %td Manage toys
-    %tbody
-      - Toy.all.order(:id).each do |toy|
-        %tr
-          %td= toy.id
-          %td= toy.name
-          %td= toy.aasm_state
-          %td= User.select(:name).find_by(id: toy.user_id)&.name
-          %td
-            = link_to 'Edit',
-              { action: :edit, id: toy.id },
-              class: 'btn btn-info'            
-            = link_to 'Delete', [:admin, toy],
-              method: :delete, class: 'btn btn-danger'     
-            = link_to 'view',
-              { action: :show, id: toy.id },
-              class: 'btn btn-success'
+.row
+  .col.s12.m8.offset-m2
+    #toys-dashboard.toys
+      %h1 
+        All toys
+        = link_to 'Create new',
+          { action: :index }, remote: true, class: 'badge badge-secondary'
+      %table.table.table-striped
+        %thead
+          %tr
+            %td ID
+            %td Name
+            %td State
+            %td Owner
+            %td.center Manage toys
+        %tbody
+          - Toy.all.order(:id).each do |toy|
+            %tr
+              %td= toy.id
+              %td= toy.name
+              %td= toy.aasm_state
+              %td= User.select(:name).find_by(id: toy.user_id)&.name
+              %td.center
+                = link_to 'Edit',
+                  { action: :edit, id: toy.id },
+                  class: 'btn btn-info'            
+                = link_to 'Delete', [:admin, toy],
+                  method: :delete, class: 'btn btn-danger'     
+                = link_to 'view',
+                  { action: :show, id: toy.id },
+                  class: 'btn btn-success'
 
           

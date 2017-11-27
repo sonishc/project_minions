@@ -21,13 +21,21 @@ $radius-tab: 5px;
 		float: left;
 	}
 }
+
+
+
 form {
 	input {
 		text-align: center;
 		background-color: $white !important;
 	}
 	input[type="radio"]{
+		opacity: 1 !important;
 		background-color: black !important;
+	}
+	label {
+		font-size: 1rem;
+		color: white !important;
 	}
 }
 

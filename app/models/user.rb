@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_attached_file :image, styles: { medium: '300x300>', thumb: '100x100>' }
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\z}
 
-  validates :age, :sex, presence: true
+  validates :email, uniqueness: true
+  validates :name, :age, :sex, presence: true
   validates :age, numericality: { only_integer: true,
                                   less_than: 140, greater_than: 4 }
 

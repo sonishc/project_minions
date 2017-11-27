@@ -1,14 +1,18 @@
-#toy-dashboard
-  %table.table.table-striped
-    %thead
-      %tr
-        %td ID
-        %td Name
-        %td State
-        %td Owner
-    %tbody
-      %tr
-        %td= @toy.id
-        %td= @toy.name
-        %td= @toy.aasm_state
-        %td= User.select(:name).find_by(id: @toy.user_id)&.name
+.row
+  .col.s12.m4.offset-m4
+    #toy-dashboard
+      %h1.flow-text
+        Name:
+        = @toy.name
+      %table.table.table-striped
+        %tbody
+          %tr
+            %td ID
+            %td= @toy.id
+          %tr
+            %td State
+            %td= @toy.aasm_state
+          %tr
+            %td Owner
+            %td= User.select(:name).find_by(id: @toy.user_id)&.name
+          %tr

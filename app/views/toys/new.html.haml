@@ -1,11 +1,13 @@
-.block-for-pages
-  %h1
-    Add Minion
-  = form_for [current_user, @toy] do |f|
-    %span
-      Name:
-    = f.text_field :name
-    = f.hidden_field(:user_id, {value: current_user.id})
-    = f.submit "Create", class: 'main-btn'
-
-  = link_to 'Back', current_user, class: 'info-btn'
+.row
+  .col.s12.m8.offset-m2.center
+    .block-for-pages
+      %h1.flow-text
+        Add Minion
+      = form_for [current_user, @toy] do |f|
+        %span.flow-text
+          Name:
+        = f.text_field :name
+        = f.hidden_field(:user_id, {value: current_user.id})
+        = f.submit "Create", class: 'btn teal accent-3'
+      %br
+      = link_to 'Back', current_user, class: 'btn'

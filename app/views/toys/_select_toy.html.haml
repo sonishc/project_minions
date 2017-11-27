@@ -1,4 +1,6 @@
 #select_toy
   - @toys.map do |toy|
+    %br
+    %br
     = link_to toy.name, user_toy_url(current_user.id, toy.id),
-      class: @toy == toy ? 'info-btn btn light-green darken-1' : 'info-btn btn red lighten-2'
+      class: @toy == toy ? 'btn light-green darken-1' : 'btn red lighten-2'

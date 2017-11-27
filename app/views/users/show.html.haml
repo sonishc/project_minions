@@ -3,7 +3,7 @@
     .nav-wrapper
       = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn'
       = link_to 'Create minion', new_user_toy_url(current_user, @toy), action: 'create', class: 'btn'
-      - unless @toys.blank?
+      - if !@toys.blank?
         = link_to 'Go to minions', user_toy_url(current_user, @toys.last.id), type: 'submit', class: 'btn'
   .col.s12.m4.offset-m4.cyan.lighten-5
     = render 'personal_info'

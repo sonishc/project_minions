@@ -3,16 +3,14 @@ require 'spec_helper'
 feature 'User sign up', js: true do
   let(:register_new) { ProjectMinions::Pages::Devise::New.new }
 
-  let(:user) { FactoryGirl.create(:user) }
-
   scenario 'Sign up with valid user data' do
     register_new.load
-    register_new.input_name.set user.name
-    register_new.input_male.set user.sex
-    register_new.input_age.set user.age
+    register_new.input_name.set 'Test'
+    register_new.input_male.set 'male'
+    register_new.input_age.set 23
     register_new.input_email.set 'valid@gmail.com'
-    register_new.input_password.set user.password
-    register_new.input_password_confirmation.set user.password
+    register_new.input_password.set 'password'
+    register_new.input_password_confirmation.set 'password'
 
     register_new.sign_up_button.click
 

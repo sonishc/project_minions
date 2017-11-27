@@ -16,5 +16,3 @@
   = link_to 'Wake up !!!',
     { action: 'event_switch', event: 'wake_up', state: 'wake_up',id: @toy.id },
     remote: true, class: "btn btn-floating  #{ @toy.may_wake_up? }"
-
-  -# = @toy.log_status_change

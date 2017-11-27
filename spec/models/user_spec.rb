@@ -1,16 +1,29 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.build(:user) }
 
   describe 'creation' do
-    it 'can be created if valid' do
-      expect(user).to be_valid
+    context 'factory valid' do
+      it 'can be created if valid' do
+        expect(user).to be_valid
+      end
+
+      it 'will not be created if not valid' do
+        user.email = nil
+        expect(user).to_not be_valid
+      end
     end
 
-    it 'will not be created if not valid' do
-      user.email = nil
-      expect(user).to_not be_valid
+    context 'duplicate email' do
+      before do
+        FactoryGirl.create(:user)
+      end
+
+      it 'is invalid with a duplicate email' do
+        user.valid?
+        expect(user.errors[:email]).to include('has already been taken')
+      end
     end
   end
 

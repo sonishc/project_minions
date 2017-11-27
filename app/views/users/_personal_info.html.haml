@@ -1,10 +1,12 @@
 #personal_info
-  = image_tag current_user.image.url(:medium)
+  .center
+    = image_tag current_user.image.url(:medium)
   %br
-  .chose-personal-photo
-    = form_for current_user  do |f|
-      = f.file_field :image
-      = f.button 'Change new photo', class: 'btn-success'
+  .center
+    .chose-personal-photo
+      = form_for current_user  do |f|
+        = f.file_field :image
+        = f.button 'Change new photo', class: 'btn-success'
   .person-page
     %p 
       = current_user.name

@@ -1,6 +1,7 @@
 class Toy < ApplicationRecord
   belongs_to :user
   has_many :logs, dependent: :destroy
+
   validates :name, presence: true, length: { maximum: 15 }
 
   include AASM

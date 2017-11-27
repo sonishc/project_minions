@@ -1,21 +1,20 @@
 example_id                                                   | status  | run_time        |
 ------------------------------------------------------------ | ------- | --------------- |
-./spec/controllers/admin/dashboard_controller_spec.rb[1:1:1] | passed  | 0.02108 seconds |
-./spec/features/user_signs_up_spec.rb[1:1]                   | passed  | 1.51 seconds    |
-./spec/features/user_signs_up_spec.rb[1:2]                   | passed  | 2.55 seconds    |
-./spec/features/user_signs_up_spec.rb[1:3]                   | passed  | 0.58593 seconds |
-./spec/features/user_signs_up_spec.rb[1:4]                   | passed  | 0.60023 seconds |
+./spec/controllers/admin/dashboard_controller_spec.rb[1:1:1] | passed  | 0.04952 seconds |
 ./spec/helpers/admin/dashboard_helper_spec.rb[1:1]           | pending | 0.00001 seconds |
 ./spec/models/assignment_spec.rb[1:1]                        | pending | 0.00002 seconds |
 ./spec/models/role_spec.rb[1:1]                              | pending | 0.00001 seconds |
-./spec/models/toy_spec.rb[1:1:1]                             | passed  | 0.01086 seconds |
-./spec/models/toy_spec.rb[1:1:2]                             | passed  | 0.01251 seconds |
-./spec/models/toy_spec.rb[1:2]                               | passed  | 0.01453 seconds |
-./spec/models/toy_spec.rb[1:3]                               | passed  | 0.00234 seconds |
-./spec/models/user_spec.rb[1:1:1]                            | passed  | 0.0244 seconds  |
-./spec/models/user_spec.rb[1:1:2]                            | passed  | 0.01243 seconds |
-./spec/models/user_spec.rb[1:2]                              | passed  | 0.00643 seconds |
-./spec/models/user_spec.rb[1:3]                              | passed  | 0.05059 seconds |
-./spec/models/user_spec.rb[1:4]                              | passed  | 0.00359 seconds |
-./spec/models/user_spec.rb[1:5]                              | passed  | 0.00357 seconds |
-./spec/models/user_spec.rb[1:6]                              | passed  | 0.00309 seconds |
+./spec/models/toy_spec.rb[1:1:1]                             | passed  | 0.00863 seconds |
+./spec/models/toy_spec.rb[1:2:1]                             | passed  | 0.0597 seconds  |
+./spec/models/toy_spec.rb[1:3:1]                             | passed  | 0.00302 seconds |
+./spec/models/toy_spec.rb[1:4:1]                             | passed  | 0.00963 seconds |
+./spec/models/toy_spec.rb[1:5:1:1]                           | passed  | 0.00875 seconds |
+./spec/models/toy_spec.rb[1:6]                               | passed  | 0.0373 seconds  |
+./spec/models/user_spec.rb[1:1:1:1]                          | passed  | 0.00824 seconds |
+./spec/models/user_spec.rb[1:1:1:2]                          | passed  | 0.00716 seconds |
+./spec/models/user_spec.rb[1:1:2:1]                          | passed  | 0.02902 seconds |
+./spec/models/user_spec.rb[1:2]                              | passed  | 0.00521 seconds |
+./spec/models/user_spec.rb[1:3]                              | passed  | 0.00574 seconds |
+./spec/models/user_spec.rb[1:4]                              | passed  | 0.00489 seconds |
+./spec/models/user_spec.rb[1:5]                              | passed  | 0.00458 seconds |
+./spec/models/user_spec.rb[1:6]                              | passed  | 0.06834 seconds |

@@ -18,7 +18,7 @@
             %td Sign in count
             %td Hours on site
             %td Role
-            %td Manage users
+            %td.center Manage users
         %tbody
           - @users.all.each do |user|
             %tr
@@ -32,7 +32,7 @@
               %td= user.sign_in_count
               %td= ((Time.now - user.created_at) / 1.hour).round
               %td= user.roles[0]&.name
-              %td
+              %td.center
                 = link_to 'Edit',
                   { action: :edit, id: user.id },
                   class: 'btn-info btn'
