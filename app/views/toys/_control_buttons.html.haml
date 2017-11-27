@@ -1,20 +1,20 @@
 #control_buttons
-  %h1
+  %h1.flow-text
     I need
   = link_to "Sleep",
     { action: 'event_switch', event: 'sleep', state: 'sleeped', id: @toy.id },
-    remote: true, class: "info-btn #{ @toy.may_sleep? }"
+    remote: true, class: "btn btn-floating  #{ @toy.may_sleep? }"
   = link_to 'Play',
     { action: 'event_switch', event: 'play', state: 'played', id: @toy.id },
-    remote: true, class: "info-btn #{ @toy.may_play? }"
+    remote: true, class: "btn btn-floating btn #{ @toy.may_play? }"
   = link_to 'Eat',
     { action: 'event_switch', event: 'eat', state: 'ate', id: @toy.id },
-    remote: true, class: "info-btn #{ @toy.may_eat? }"
+    remote: true, class: "btn btn-floating  #{ @toy.may_eat? }"
   = link_to 'Training',
     { action: 'event_switch', event: 'train', state: 'trained', id: @toy.id },
-    remote: true, class: "info-btn #{ @toy.may_train? }"
+    remote: true, class: "btn btn-floating  #{ @toy.may_train? }"
   = link_to 'Wake up !!!',
     { action: 'event_switch', event: 'wake_up', state: 'wake_up',id: @toy.id },
-    remote: true, class: "info-btn #{ @toy.may_wake_up? }"
-  %br
-  = @toy.log_status_change
+    remote: true, class: "btn btn-floating  #{ @toy.may_wake_up? }"
+
+  -# = @toy.log_status_change

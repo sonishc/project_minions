@@ -1,12 +1,14 @@
-.history#history_toy
-	%h2
+#history_toy.history
+	%h2.flow-text
 		History
-	- @toy.logs.each_with_index do |log, index|
-		%em
-			%span (
-			= log.event 
-			%span )
-	%br
-	= link_to 'Send History',
-		{ controller: :toys, action: :send_history, id: @toy},
-		class: "cta-btn", method: :post
+	%p The last 6 events
+	%br/
+	- @toy.logs.last(6).each_with_index do |log, index|
+		%span.btn-floating
+			= log.event
+	%br/
+	%br/
+	= link_to(options = { controller: :toys, action: :send_history, id: @toy },
+		html_options = { class: 'btn',  method: :post }) do 
+		Send the all history to email 
+		%i.material-icons send

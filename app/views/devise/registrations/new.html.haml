@@ -1,45 +1,47 @@
-.form-for
-  %h2 Sign up
 
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    .alert-error
-      = devise_error_messages!
-    %div
-      = f.label :name
-      %br
-      = f.text_field :name, autofocus: true
+.row
+  .col.s12.m4.offset-m4.cyan.lighten-5.flow-text.center
+    %h2 Sign up
 
-    %div
-      = f.label :Gender
-      %br
-      %label.radio-inline
-        = f.radio_button(:sex, 'male')
-        male
-      %label.radio-inline
-        = f.radio_button(:sex, 'female')
-        fmale 
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .alert-error
+        = devise_error_messages!
+      %div
+        = f.label :name
+        %br
+        = f.text_field :name, autofocus: true
 
-    %div
-      = f.label :age
-      %br
-      = f.number_field :age, within: 4..140
+      %div
+        = f.label :Gender
+        %br
+        %label.radio-inline
+          = f.radio_button(:sex, 'male')
+          male
+        %label.radio-inline
+          = f.radio_button(:sex, 'female')
+          fmale 
 
-    %div
-      = f.label :email
-      %br
-      = f.email_field :email
+      %div
+        = f.label :age
+        %br
+        = f.number_field :age, within: 4..140
 
-    %div
-      = f.label :password
-      %br
-      = f.password_field :password
+      %div
+        = f.label :email
+        %br
+        = f.email_field :email
 
-    %div
-      = f.label :password_confirmation
-      %br
-      = f.password_field :password_confirmation
+      %div
+        = f.label :password
+        %br
+        = f.password_field :password
 
-    %div
-      = f.submit 'Sign up', class: 'main-btn'
+      %div
+        = f.label :password_confirmation
+        %br
+        = f.password_field :password_confirmation
 
-  = render 'devise/shared/links'
+      %div
+        = f.submit 'Sign up', class: 'btn pink accent-1'
+
+    = render 'devise/shared/links'

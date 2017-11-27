@@ -1,41 +1,43 @@
-#users-dashboard.users
-  %h1 
-    All users
-    = link_to 'Create new',
-      {action: :index}, remote: true,
-      class: 'badge badge-secondary'
-  %table.table.table-striped
-    %thead
-      %tr
-        %td ID
-        %td
-        %td Name
-        %td Age
-        %td Gender
-        %td Email
-        %td Sign in count
-        %td Hours on site
-        %td Role
-        %td Manage users
-    %tbody
-      - @users.all.each do |user|
-        %tr
-          %td= user.id
-          %td
-            =image_tag user.image.url(:thumb)
-          %td= user.name
-          %td= user.age
-          %td= user.sex
-          %td= user.email
-          %td= user.sign_in_count
-          %td= ((Time.now - user.created_at) / 1.hour).round
-          %td= user.roles[0]&.name
-          %td
-            = link_to 'Edit',
-              { action: :edit, id: user.id },
-              class: 'btn btn-info'
-            = link_to 'Delete', user,
-              method: :delete, class: 'btn btn-danger'
-            = link_to 'view',
-              { action: :show, id: user.id },
-              class: 'btn btn-success'
+.row
+  .col.s12.m12.center
+    #users-dashboard.users
+      %h1 
+        All users
+        = link_to 'Create new',
+          {action: :index}, remote: true,
+          class: 'badge badge-secondary'
+      %table.table.table-striped
+        %thead
+          %tr
+            %td ID
+            %td
+            %td Name
+            %td Age
+            %td Gender
+            %td Email
+            %td Sign in count
+            %td Hours on site
+            %td Role
+            %td Manage users
+        %tbody
+          - @users.all.each do |user|
+            %tr
+              %td= user.id
+              %td
+                =image_tag user.image.url(:thumb)
+              %td= user.name
+              %td= user.age
+              %td= user.sex
+              %td= user.email
+              %td= user.sign_in_count
+              %td= ((Time.now - user.created_at) / 1.hour).round
+              %td= user.roles[0]&.name
+              %td
+                = link_to 'Edit',
+                  { action: :edit, id: user.id },
+                  class: 'btn-info btn'
+                = link_to 'Delete', user,
+                  method: :delete, class: 'btn btn-danger'
+                = link_to 'view',
+                  { action: :show, id: user.id },
+                  class: 'btn btn-success'

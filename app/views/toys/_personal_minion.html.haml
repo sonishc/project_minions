@@ -1,13 +1,18 @@
-#personal_minion
-  %h1
-    Your's personal minion.
-    %h2
+.card
+  .card-image.waves-effect.waves-block.waves-light
+    %img.activator{src: asset_path('main.png'),}/
+  .card-content
+    %span.card-title.activator.grey-text.text-darken-4
       Name:
       = @toy.name
-      |
-      State:
-      = @toy.aasm_state
-  %img{ src: asset_path('main.png'), alt: 'Select state',
-    id: 'minion-img', height: '180', width: '130'}
-  %br
-  = link_to 'Go home', current_user, class: 'cta-btn'
+      %i.material-icons settings
+    %span
+      = link_to(current_user, class: 'btn') do 
+        %i.material-icons.left> home
+        Home
+      = render ('delete_toy')
+  .card-reveal
+    %span.card-title.grey-text.text-darken-4
+      %p.flow-text Select minion
+      %i.material-icons.right close
+    = render ('select_toy')

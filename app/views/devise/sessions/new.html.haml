@@ -1,25 +1,24 @@
-.form-for
-  %h2 Log in
+.row
+  .col.s12.m4.offset-m4.cyan.lighten-5.center
+    %h2 Log in
 
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    = devise_error_messages!
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = devise_error_messages!
 
-    %div
-      = f.label :email
-      %br
-      = f.email_field :email
+      %div
+        %i.material-icons email
+        = f.email_field :email, placeholder: "Email"
 
-    %div
-      = f.label :password
-      %br
-      = f.password_field :password
+      %div
+        %i.material-icons https
+        = f.password_field :password, placeholder: "password"
 
-    %div
-      = f.submit 'log in', class: 'main-btn'
+      %div.flow-text
+        = f.submit 'log in', class: 'btn pink accent-1'
 
-    - if devise_mapping.rememberable?
-      %div{ class:'field' }
-        = f.check_box :remember_me
-        = f.label :remember_me
+      - if devise_mapping.rememberable?
+        %div{ class:'field' }
+          = f.check_box :remember_me
+          = f.label :remember_me
 
-  = render 'devise/shared/links'
+    = render 'devise/shared/links'

@@ -1,26 +1,28 @@
-#edit-user-dashboard
-  %br
-  #form-for-edit-user.form-for
-    = form_for @user do |f|
-      = f.label :name
-      = f.text_field :name, {required: ""}
-      = f.label :gender
+.row
+  .col.s12.m12.offset-m4
+    #edit-user-dashboard
       %br
-        %label.radio-inline
-          = f.radio_button(:sex, 'male')
-          male
-        %label.radio-inline
-          = f.radio_button(:sex, 'female')
-          fmale
-      = f.label :age
-      = f.number_field :age, within: 4..140
-      %br
-      = f.label :email
-      = f.email_field :email, {required: ""}
-      = f.label :image
-      = f.file_field :image
-      = f.label :password
-      = f.password_field :password, {required: ""}
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation, {required: ""}
-      = f.submit 'Edit'
+      #form-for-edit-user.form-for
+        = form_for @user do |f|
+          = f.label :name
+          = f.text_field :name, {required: ""}
+          = f.label :gender
+          %br
+            %label.radio-inline
+              = f.radio_button(:sex, 'male')
+              male
+            %label.radio-inline
+              = f.radio_button(:sex, 'female')
+              fmale
+          = f.label :age
+          = f.number_field :age, within: 4..140
+          %br
+          = f.label :email
+          = f.email_field :email, {required: ""}
+          = f.label :image
+          = f.file_field :image
+          = f.label :password
+          = f.password_field :password, {required: ""}
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, {required: ""}
+          = f.submit 'Edit'

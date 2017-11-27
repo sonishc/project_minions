@@ -1,13 +1,12 @@
-%button#deleteBtn.delete-toys
-  Delete minion
+%button#deleteBtn.btn.red.accent-4
+  %i.material-icons delete_forever
 #deleteModal.modal
-  .modal-content
-    .modal-header
-      %h2 
-        Are you sure?
-    .modal-body
-      = link_to 'Yes, I want delete his', user_toy_url(current_user, @toy),
-        method: :delete,
-        class: 'delete-toys aprove'
-      %span.delete-toys.close-delete
-        No, back to minion profile
+  .modal-header
+    %h2 
+      Are you sure?
+  .modal-body
+    = link_to 'Yes, I want delete his', user_toy_url(current_user, @toy),
+      method: :delete,
+      class: 'btn red darken-1'
+    %span.delete-toys.close-delete.btn.light-green.darken-1
+      No, back to minion profile

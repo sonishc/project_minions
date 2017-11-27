@@ -1,13 +1,15 @@
-.block-for-pages
-  .sign-out
-    = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'main-btn'
-    = link_to 'Create minion', new_user_toy_url(current_user, @toy), action: 'create', class: 'cta-btn'
-    - unless @toys.blank?
-      = link_to 'Go to minions', user_toy_url(current_user, @toys.last.id), type: 'submit', class: 'main-btn'
-  %br
-  = render 'personal_info'
-  %div
+.row
+  .col.s12.m8.offset-m2.center
+    .nav-wrapper
+      = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn'
+      = link_to 'Create minion', new_user_toy_url(current_user, @toy), action: 'create', class: 'btn'
+      - unless @toys.blank?
+        = link_to 'Go to minions', user_toy_url(current_user, @toys.last.id), type: 'submit', class: 'btn'
+  .col.s12.m4.offset-m4.cyan.lighten-5
+    = render 'personal_info'
     %div
-      %p
-        Download:
-        = link_to 'CSV', user_path( controller: :toys, action: :index, format: 'csv' )
+      %div
+        %p
+          Download CSV file all toys:
+          = link_to user_path( controller: :toys, action: :index, format: 'csv' ) do
+            %i.material-icons file_download

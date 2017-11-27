@@ -1,18 +1,23 @@
-#user-dashboard
-  %table.table.table-striped
-    %thead
-      %tr
-        %td ID
-        %td Name
-        %td Age
-        %td Gender
-        %td Email
-        %td Toys count
-    %tbody
-      %tr
-        %td= @user.id
-        %td= @user.name
-        %td= @user.age
-        %td= @user.sex
-        %td= @user.email
-        %td= @user.toys.count
+.row
+  .col.s12.m4.offset-m4
+    #user-dashboard
+      %table.table.table-striped
+        %tbody
+          %tr
+            %td ID
+            %td= @user.id
+          %tr  
+            %td Name
+            %td= @user.name
+          %tr 
+            %td Age
+            %td= @user.age
+          %tr 
+            %td Gender
+            %td= @user.sex
+          %tr 
+            %td Email
+            %td= @user.email
+          %tr 
+            %td Toys count
+            %td= @user.toys.count

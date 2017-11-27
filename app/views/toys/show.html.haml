@@ -1,8 +1,7 @@
 #toy
-  .block-for-pages
-    = render ('personal_minion')
-    = render ('control_buttons')
-    .toys
-      = render ('select_toy')
-    = render ('delete_toy')
-  = render ('history')
+  .row
+    .col.s12.m8
+      = render ('control_buttons')
+      = render ('history')
+    .col.s12.m4
+      = render ('personal_minion')

@@ -1,10 +1,12 @@
-%h1 Please, choose your category
-%h2
-  Users:
-  = User.all.count
-%h2
-  Toys:
-  = Toy.all.count
-%h2
-  Logs:
-  = Log.select(:toy_id).map(&:toy_id).uniq.count
+.row
+  .col.s12.m12.center
+    %h1 Please, choose your category
+    %h2
+      Users:
+      = User.all.count
+    %h2
+      Toys:
+      = Toy.all.count
+    %h2
+      Logs:
+      = Log.select(:toy_id).map(&:toy_id).uniq.count

@@ -16,38 +16,19 @@ $link-tertiary: $lightgreen;
 $radius-button: 5px;
 $radius-tab: 5px;
 
-*{
-	margin: 0 auto;
-}
-
-body {
-	a:hover {
-		color: $white;
-		text-decoration: none;
-	}
-	text-align:center; 
-}
-
 .sign-out {
 	a {
 		float: left;
 	}
 }
-select {
-	background-color: $grey;
-	width: 150px;
-	font-size: 14px;
-	color: white;
-}
-
-.container {
-	clear: both;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-		div{
-			flex: 1;
-		}
+form {
+	input {
+		text-align: center;
+		background-color: $white !important;
+	}
+	input[type="radio"]{
+		background-color: black !important;
+	}
 }
 
 .toys {
@@ -106,7 +87,6 @@ select {
 ============================================= */
 
 .app-frame {
-  border: 2px solid $orange;
 		a {
 			color: #FFF0F5;
 		}
@@ -120,7 +100,7 @@ select {
 }
 
 .alert-error {
-	color: $yellow;
+	color: $red;
 	opacity: 0.9;
 	text-shadow: none;
 	font-size: 14px;
